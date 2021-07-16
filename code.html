@@ -120,13 +120,19 @@
                     
                         document.getElementById("results").innerHTML = templateRows;
                     }
+                    //This code below runs inline at the bottom of app.html
+                    document.getElementById("btnSubmit").addEventListener("click",getValues);
                     </code>
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                <p>The code shown contains all of the Javascript used in this project. Most of the Javascript is contained inside of an external script, <b>site.js</b>. One line of Javascript runs inline inside of <b>app.html</b>. A few key pieces of it are explained below.</p>
+                <h5>getValues</h5>
+                <p><b>getValues</b> is a function that is triggered when the "Start!" button is clicked on the app webpage. (See the bottom of the Javascript.)<br>It declares <b>startValue</b> and <b>endValue</b> which it grabs from the number input on the app webpage.<br>It validates that the user input is indeed numbers and not letters. Then, it passes those numbers to the function, <b>generateNumbers</b>.</p>
+                <h5>generateNumbers</h5>
+                <p><b>generateNumbers</b> takes in the values given to it by <b>getValues</b> and creates an array using a <b>for loop</b>. This array is contained within the <b>numbers</b> variable. <b>generateNumbers</b> then returns the <b>numbers</b> variable which allows us to use it in our next function, <b>displayNumbers</b>.</p>
+                <h5>displayNumbers</h5>
+                <p><b>displayNumbers</b> declares the variable <b>templateRows</b>, an empty string, which will be filled with numbers, one by one, and then used to create table rows on our app page. The function then creates another <b>for loop</b> which uses our <b>numbers</b> variable index length to calculate how many numbers it needs to push to our app page.<br>Each index, or number, is passed through a for loop to determine if it is 0, even, or odd. If it is 0 or odd, it is left alone. If it is even, the <b>.even</b> class is applied to it, which makes the number bold.<br>The <b>for loop</b> then takes the number and inserts it into <b>templateRows</b> with a html table row and cell.</p>
             </div>
         </div>
     </div>
