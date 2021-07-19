@@ -41,7 +41,7 @@ footer .social > a {
 
 footer .social > a:hover {
     opacity: 0.9;
-    color: var(--secondary-color);
+    color: #0d6efd;
 }
 
 .bsicon {
